@@ -14,7 +14,6 @@ public class StudentServiceImpl implements StudentService {
     @Autowired
     private StudentRepository studentRepository;
 
-
     @Override
     public Student addStudent(Student student) {
         return studentRepository.save(student);
@@ -36,5 +35,10 @@ public class StudentServiceImpl implements StudentService {
         Student stud =studentRepository.findById(id).orElseThrow(() -> new RuntimeException("Student Id is not found"));
         stud.setCgpa(cgpa);
         return studentRepository.save(stud);
+    }
+
+    @Override
+    public List<Student> findStudentsBySchoolId(Integer id) {
+        return (studentRepository.findAllBySchoolId(id));
     }
 }

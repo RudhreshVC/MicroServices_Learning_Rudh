@@ -15,4 +15,6 @@ public interface StudentService {
     public Student getStudentById(Long id);
 
     public Student updateCgpaById(Long id, Double cgpa);
+
+    public List<Student> findStudentsBySchoolId(Integer id);
 }

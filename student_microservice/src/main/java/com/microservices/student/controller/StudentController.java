@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.ListResourceBundle;
 
 @RestController
 @RequestMapping("/students")
@@ -35,6 +36,11 @@ public class StudentController {
     @PutMapping ("/updatecgpa/{id}")
     public ResponseEntity<Student> updateCgpaById(@PathVariable Long id, @RequestBody CgpaDTO cgpa){
         return new ResponseEntity<>(studentService.updateCgpaById(id,cgpa.getCgpa()),HttpStatus.OK);
+    }
+
+    @GetMapping("bySchoolId/{schoolId}")
+    public ResponseEntity<List<Student>> findStudentsBySchoolId(@PathVariable Integer schoolId){
+        return new ResponseEntity<>(studentService.findStudentsBySchoolId(schoolId),HttpStatus.OK);
     }
 
 
