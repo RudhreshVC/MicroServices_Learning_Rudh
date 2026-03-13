@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 import jakarta.validation.constraints.NotNull;
+
 @Entity
 @Data
 public class Student {
@@ -27,7 +28,7 @@ public class Student {
     private String email;
 
     private Double cgpa;
-    
+
     @NotNull
     @Column(nullable = false)
     private Integer schoolId;
