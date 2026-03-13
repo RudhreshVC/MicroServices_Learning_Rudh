@@ -3,6 +3,8 @@ package com.microservices.school.dto;
 import com.microservices.school.entity.SchoolBoard;
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 public class FullSchoolResponse {
 
@@ -14,5 +16,5 @@ public class FullSchoolResponse {
 
     private SchoolBoard schoolBoard;
 
-    private List<Student> allStudents;
+    private List<StudentDTO> allStudents;
 }
